@@ -34,3 +34,5 @@
 # Builds
 *.apk
 *.unitypackage
+*/Assets/Plugins/Editor*
+*/.idea/*
