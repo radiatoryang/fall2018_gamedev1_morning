@@ -74,9 +74,10 @@ public class FirstPerson : MonoBehaviour
 	void FixedUpdate() // all physics code should go in FixedUpdate!!!
 	{
 		// apply our forces to move the object around
-		GetComponent<Rigidbody>().velocity = inputVector; // no need for Time.deltaTime, already fixed framerate
+		GetComponent<Rigidbody>().velocity = inputVector + Physics.gravity * 0.1f; // no need for Time.deltaTime, already fixed framerate
 
 		// one problem: gravity doesn't work anymore
+		
 	}
 	
 	
