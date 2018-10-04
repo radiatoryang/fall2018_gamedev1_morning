@@ -30,6 +30,24 @@ public class RaycastMouse : MonoBehaviour
 			// if true, that means it hit something
 			// so move sphere to where the raycast hit the thing
 			mySphere.position = mouseRayHit.point; // RaycastHit.point = world pos where it hit
+			
+			// to check the tag (if you wanted to)
+			if (mouseRayHit.collider.tag == "Whatever Tag")
+			{
+				Debug.Log("the raycast hit object was tagged!");
+			}
+			
+			// we can also access the object we hit with the raycast
+			mouseRayHit.transform.Rotate(0f, 0f, 1f);
+			
+			// INSTANTIATE:
+			// cloning an object at runtime
+			// mouseRayHit.point = spawn location for new clone
+			// Quaternion.Euler() = generates a Quaternion from an Euler Angle
+			if ( Input.GetMouseButton(0) )
+			{
+				Instantiate(mySphere, mouseRayHit.point, Quaternion.Euler(0f, 0f, 0f));
+			}
 		}
 	}
 	
