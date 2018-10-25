@@ -8,6 +8,13 @@ public class Fish : MonoBehaviour
 {
 	public Vector3 destination;
 	public float swimSpeed = 5f;
+
+	// called when the object is instantiated
+	void Start()
+	{
+		// pick a random destination within a sphere (radius=10) centered on 0,0,0
+		destination = Random.insideUnitSphere * 10f;
+	}
 	
 	void Update ()
 	{
